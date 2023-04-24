@@ -1,0 +1,2 @@
+Link,Type,Is Publish,Departing From,Final Destination,Departure Date,Airline,Flight Number,Flight Disruption,Delay Length,Delay Reason,First Name,Last Name,Email,Phone Number,Reference Number,Address Line 1,Address Line 2,City,Postal Code,State,Country,Assistance Type,Assistance Details
+https://localhost:3000/7Ofv5cW2JR9xcmxi2elH0VjJB6tVVxtU9zjQ9z9u,Collective,true,AAAAAAAA,AAAAAAAA,"Sat Apr 01 2023 03:00:00 GMT+0300 (Восточная Европа, летнее время)",,,canceled,,,,,,,,,,,,,,,
