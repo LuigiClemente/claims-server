@@ -39,12 +39,7 @@ const FormSchema = new Schema(
     delayReason: {
       type: String,
     },
-    firstName: {
-      type: String,
-    },
-    lastName: {
-      type: String,
-    },
+    fullName: { type: Array<{ firstName: String, lastName: String }> },
     email: {
       type: String,
     },
