@@ -45,11 +45,8 @@ class App {
   }
 
   private initialiseDatabaseConnection(): void {
-    // mongoose.connect(
-    //   `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}${process.env.MONGO_PATH}`
-    // );
     mongoose.connect(
-      `${process.env.MONGO_URI}`
+      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}${process.env.MONGO_PATH}`
     );
   }
 

@@ -7,7 +7,6 @@ import Props from "../../utils/props/props";
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 
 class FormService {
-  
   private form = FormModel;
 
   public async create(
@@ -22,7 +21,8 @@ class FormService {
     flightDisruption: string,
     delayLength: string,
     delayReason: string,
-    fullName: Array<{ firstName: string, lastName: string }>,
+    firstName: string,
+    lastName: string,
     email: string,
     phoneNumber: string,
     referenceNumber: string,
@@ -48,7 +48,8 @@ class FormService {
         flightDisruption,
         delayLength,
         delayReason,
-        fullName,
+        firstName,
+        lastName,
         email,
         phoneNumber,
         referenceNumber,
@@ -61,12 +62,7 @@ class FormService {
         assistanceType,
         assistanceDetails,
       }
-      const fullNames = data.fullName.map((nameObj) => `${nameObj.firstName} ${nameObj.lastName}`);
 
-      const formData = {
-        ...data,
-        fullName: fullNames,
-      };
       const form = await this.form.create(data);
 
       if (!form) {
@@ -87,7 +83,8 @@ class FormService {
           { id: "flightDisruption", title: "Flight Disruption" },
           { id: "delayLength", title: "Delay Length" },
           { id: "delayReason", title: "Delay Reason" },
-          { id: "fullName", title: "fullName" },
+          { id: "firstName", title: "First Name" },
+          { id: "lastName", title: "Last Name" },
           { id: "email", title: "Email" },
           { id: "phoneNumber", title: "Phone Number" },
           { id: "referenceNumber", title: "Reference Number" },
@@ -103,7 +100,7 @@ class FormService {
       });
 
       await csvWriter.writeRecords([
-        formData
+        data
       ]);
 
       return form;
@@ -124,7 +121,8 @@ class FormService {
     flightDisruption: string,
     delayLength: string,
     delayReason: string,
-    fullName: Array<{ firstName: string, lastName: string }>,
+    firstName: string,
+    lastName: string,
     email: string,
     phoneNumber: string,
     referenceNumber: string,
@@ -151,7 +149,8 @@ class FormService {
         flightDisruption,
         delayLength,
         delayReason,
-        fullName,
+        firstName,
+        lastName,
         email,
         phoneNumber,
         referenceNumber,
@@ -164,12 +163,7 @@ class FormService {
         assistanceType,
         assistanceDetails,
       }
-      const fullNames = data.fullName.map((nameObj) => `${nameObj.firstName} ${nameObj.lastName}`);
 
-      const formData = {
-        ...data,
-        fullName: fullNames,
-      };
       if (!currenForm) {
         throw new Error("Unable to find form with that id");
       }
@@ -197,7 +191,8 @@ class FormService {
           { id: "flightDisruption", title: "Flight Disruption" },
           { id: "delayLength", title: "Delay Length" },
           { id: "delayReason", title: "Delay Reason" },
-          { id: "fullName", title: "fullName" },
+          { id: "firstName", title: "First Name" },
+          { id: "lastName", title: "Last Name" },
           { id: "email", title: "Email" },
           { id: "phoneNumber", title: "Phone Number" },
           { id: "referenceNumber", title: "Reference Number" },
@@ -213,7 +208,7 @@ class FormService {
       });
 
       await csvWriter.writeRecords([
-        formData
+        data
       ]);
 
       return form;
@@ -232,7 +227,8 @@ class FormService {
     flightDisruption: string,
     delayLength: string,
     delayReason: string,
-    fullName: Array<{ firstName: string, lastName: string }>,
+    firstName: string,
+    lastName: string,
     email: string,
     phoneNumber: string,
     referenceNumber: string,
@@ -257,7 +253,8 @@ class FormService {
         flightDisruption,
         delayLength,
         delayReason,
-        fullName,
+        firstName,
+        lastName,
         email,
         phoneNumber,
         referenceNumber,
@@ -270,12 +267,7 @@ class FormService {
         assistanceType,
         assistanceDetails,
       }
-      const fullNames = data.fullName.map((nameObj) => `${nameObj.firstName} ${nameObj.lastName}`);
 
-      const formData = {
-        ...data,
-        fullName: fullNames,
-      };
       if (!currenForm) {
         throw new Error("Unable to find form with that id");
       }
@@ -310,7 +302,8 @@ class FormService {
           { id: "flightDisruption", title: "Flight Disruption" },
           { id: "delayLength", title: "Delay Length" },
           { id: "delayReason", title: "Delay Reason" },
-          { id: "fullName", title: "fullName" },
+          { id: "firstName", title: "First Name" },
+          { id: "lastName", title: "Last Name" },
           { id: "email", title: "Email" },
           { id: "phoneNumber", title: "Phone Number" },
           { id: "referenceNumber", title: "Reference Number" },
@@ -326,7 +319,7 @@ class FormService {
       });
 
       await csvWriter.writeRecords([
-        formData
+        data
       ]);
 
       return form;
