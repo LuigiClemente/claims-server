@@ -12,8 +12,7 @@ export default interface Form extends Document {
     flightDisruption: string;
     delayLength: string;
     delayReason: string;
-    firstName: string;
-    lastName: string;
+    fullName: Array<{ firstName: string, lastName: string }>;
     email: string;
     phoneNumber: string;
     referenceNumber: string;
